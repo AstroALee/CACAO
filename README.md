@@ -13,7 +13,7 @@
 
 ## Description 
 
-CACAO: CAnvas Calculations and Outcomes. (Sorry...) Used to generate grade book data, mid-semester assessments, distributions, and statistics since Canvas's grade book can be limiting. Git's ignore and actions should prevent me from accidentally loading student data onto the repo. Please let me know if something slipped past! 
+CACAO: CAnvas CAlculations and Outcomes. (Sorry...) Used to generate grade book data, mid-semester assessments, distributions, and statistics since Canvas's grade book can be limiting. Git's ignore and actions should prevent me from accidentally loading student data onto the repo. Please let me know if something slipped past! 
 
 
 
