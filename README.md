@@ -7,7 +7,7 @@
 <div align="center" style="margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; line-height: 1;">
   <img src="Media/Cacao_2.png" width="80%" alt="Cacao Logo surrounded by cacao trees">
   </br></br>
-  <a href="https://github.com/AstroALee/CACAO" target="_blank" style="margin: 0; padding-bottom: 0"><img alt="GitHub" src="https://img.shields.io/badge/Github-Aspen-ca752d?style=for-the-badge"></a>
+  <a href="https://github.com/AstroALee/CACAO" target="_blank" style="margin: 0; padding-bottom: 0"><img alt="GitHub" src="https://img.shields.io/badge/Github-Cacao-ca752d?style=for-the-badge"></a>
   <hr style="margin: 0; padding-top: 0;" width="50%">
 </div>
 
