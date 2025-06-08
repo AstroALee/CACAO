@@ -1,6 +1,9 @@
 # Gradebook data files (IMPORTANT NO STUDENT DATA)
 *.csv
 
+# Photos 
+*.png
+*.jpg
 
 # Mac
 .DS*
