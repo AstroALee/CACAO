@@ -49,7 +49,7 @@ class AssignmentCategory:
 
         # Column names in the gradebook and their point totals
         self.items = items
-        assert self._in_gradebook(self.items, gbook), "All items must be in the gradebook"
+        assert self._in_gradebook(self.items, gbook), f"All items must be in the gradebook {self.items=}"
         assert len(self.items) > 0, "There must be at least one item in the category"
 
         #self.point_totals = point_totals if point_totals is not None else self._calc_point_totals(gbook, items)

@@ -180,8 +180,10 @@ class Gradebook:
 
         #scores = self.gbook['Course Total']
         
+        # 'rank' method gives the percentage of scores less than or equal to the score 
+        # so the highest score gets 100 percentile, lowest score is 1/N percentile
         self.gbook['Percentile'] = \
-            self.gbook['Course Total'].apply(lambda x: percentileofscore(self.gbook['Course Total'], x, kind='rank'))
+            self.gbook['Course Total'].apply(lambda x: int(percentileofscore(self.gbook['Course Total'], x, kind='rank')))
 
         # for 100 percentile, add to the Notes for this student 
         for index, row in self.gbook.iterrows():
@@ -202,8 +204,8 @@ class Gradebook:
         self.gbook['Notes'] = ''
 
         self.course_columns = []
-        self.course_columns.append('Course Total')
         self.course_columns.append('Percentile')
+        self.course_columns.append('Course Total')
         #self.course.columns.append('Rank')
         self.course_columns.append('Letter Grade')
         self.course_columns.append('Grade Boundary')
