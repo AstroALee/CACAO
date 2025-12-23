@@ -186,6 +186,7 @@ class Gradebook:
             self.gbook['Course Total'].apply(lambda x: int(percentileofscore(self.gbook['Course Total'], x, kind='rank')))
 
         # for 100 percentile, add to the Notes for this student 
+        # NOTE: wont work if multiple students have the same top score... oh well for now (Github AI added the 'oh well for now' and that's hilarious)
         for index, row in self.gbook.iterrows():
             if row['Percentile'] >= 100.0:
                 self.gbook.at[index, 'Notes'] += ' Highest grade in class! '
