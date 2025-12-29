@@ -9,7 +9,8 @@ import numpy as np
 
 class AssignmentCategory:
 
-    def __init__(self, gbook: pd.DataFrame, global_versioned: dict[str, Any], name: str, items: list[str], point_totals: list[float] | None = None, 
+    def __init__(self, gbook: pd.DataFrame, global_versioned: dict[str, Any], name: str, 
+        items: list[str], point_totals: list[float] | None = None, 
         combine_items: list[tuple[str,str]] | None = None, extra_credit_items: list[str] | None = None, 
         course_points: int = 100, equal_weight: bool = False, weights: list[float] | None = None, 
         drop_lowest: int = 0, is_overperfect_extracredit: bool = False, version: str = 'v1') -> None :
@@ -135,7 +136,7 @@ class AssignmentCategory:
         if cat_total < 0:
             cat_total = 0.0
 
-        print(cat_total)
+        print(round(cat_total,3),end=' ')
 
         return(cat_total)
 

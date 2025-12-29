@@ -216,7 +216,7 @@ class Gradebook:
         # Given we might drop assignments and such, we will iterate over each student (row) and calculate their total points
         # for each category. 
         for index, row in self.gbook.iterrows():
-            print(f"Working on student {row['Last']}")
+            print(f"\nWorking on student {row['Last']}",end=': ')
             total_points = 0.0
 
             # If the student has a note, add it to the notes column
@@ -306,6 +306,7 @@ class Gradebook:
                     print(f'\tStudent {row["Last"]} is on the boundary for {letter2}.')
                     #self.gbook.at[index, 'Notes'] += f"On the boundary for {letter2}. "
                     break 
+        print()
 
         # Calculate percentiles after all grades are assigned
         self.calculate_percentiles()
