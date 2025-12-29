@@ -246,7 +246,7 @@ class Gradebook:
                 for prorate in self.class_metadata['prorates']:
                     if prorate[0] == row['Last'] and prorate[1] == cat.name:
                         num_prorates = prorate[2]
-                        print(f"\tProrating {cat.name} for {row['Last']} by {num_prorates} items.")
+                        print(f"\tProrating {cat.name} for {row['Last']} by {num_prorates} items.",end='\t')
                         self.gbook.at[index, 'Notes'] += f"Prorated {cat.name} by {num_prorates} items. "
 
                 cat_total = cat.calculate_category_total(row[cat.items].tolist(), num_prorates )
@@ -256,7 +256,7 @@ class Gradebook:
                 # If the student has an category total overwrite, do it here
                 for overwrite in self.class_metadata['overwrites']:
                     if overwrite[0] == row['Last'] and overwrite[1] == cat.name + ' Total':
-                        print(f"\tOverwriting {cat.name} Total with {overwrite[2]}")
+                        print(f"\tOverwriting {cat.name} Total with {overwrite[2]}",end='\t')
                         self.gbook.at[index, cat.name + ' Total'] = overwrite[2]
                         row.at[cat.name + ' Total'] = overwrite[2]
                         self.gbook.at[index, 'Notes'] += f"Overwrote {cat.name} Total with {overwrite[2]}. "
@@ -268,7 +268,7 @@ class Gradebook:
             # If we overwrite the course total, do it here
             for overwrite in self.class_metadata['overwrites']:
                 if overwrite[0] == row['Last'] and overwrite[1] == 'Course Total':
-                    print(f"\tOverwriting Course Total with {overwrite[2]}")
+                    print(f"\tOverwriting Course Total with {overwrite[2]}",end='\t')
                     old_score = self.gbook.at[index, 'Course Total']
                     self.gbook.at[index, 'Course Total'] = overwrite[2]
                     total_points = overwrite[2]  # Update total_points to the new value
@@ -285,7 +285,7 @@ class Gradebook:
             student_done = False 
             for overwrite in self.class_metadata['overwrites']:
                 if overwrite[0] == row['Last'] and overwrite[1] == 'Letter Grade':
-                    print(f"\tOverwriting Letter Grade with {overwrite[2]}")
+                    print(f"\tOverwriting Letter Grade with {overwrite[2]}",end='\t')
                     old_letter = self.gbook.at[index, 'Letter Grade']
                     self.gbook.at[index, 'Letter Grade'] = overwrite[2]
                     letter = overwrite[2]  # Update letter to the new value
@@ -303,10 +303,10 @@ class Gradebook:
                     break
                 if total_points + self.class_metadata['boundary_points'] >= boundary and letter2 != letter:
                     self.gbook.at[index, 'Grade Boundary'] = True
-                    print(f'\tStudent {row["Last"]} is on the boundary for {letter2}.')
+                    print(f'\tOn the boundary for {letter2}.',end='\t')
                     #self.gbook.at[index, 'Notes'] += f"On the boundary for {letter2}. "
                     break 
-        print()
+        print('\n')
 
         # Calculate percentiles after all grades are assigned
         self.calculate_percentiles()
