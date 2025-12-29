@@ -273,7 +273,7 @@ class Gradebook:
                     self.gbook.at[index, 'Course Total'] = overwrite[2]
                     total_points = overwrite[2]  # Update total_points to the new value
                     row.at['Course Total'] = overwrite[2]
-                    self.gbook.at[index, 'Notes'] += f"Overwrote Course Total from {old_score} with {overwrite[2]}. "
+                    self.gbook.at[index, 'Notes'] += f"Overwrote Course Total from {old_score:.2f} with {overwrite[2]}. "
 
             # Determine the letter grade based on the total points
             for letter, boundary in letter_grades.items():
